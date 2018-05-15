@@ -41,6 +41,14 @@ class Router
         throw new exception('No route defined for that uri');
     }
 
+    public static function load($file)
+    {
+        $router = new static;
+
+        require $file;
+
+        return $router;
+    }
 
 
 }

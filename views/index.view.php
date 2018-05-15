@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-
-<body>
+<?php require 'views/partials/head.php'; ?>
     <ul>
         <?php foreach ($tasks as $task) : ?>
             <li>
@@ -26,5 +18,6 @@
             </li>
         <?php endforeach; ?>
     </ul>
-</body>
-</html>
+
+<?php require 'views.partials/footer.php'; ?>
+

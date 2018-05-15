@@ -2,6 +2,7 @@
 
 require 'models/Task.php';
 require 'core/Router.php';
+require 'core/Request.php';
 
 $config = require 'config.php';
 
