@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 
 <html lang="en">
@@ -15,3 +16,10 @@
 
 </body>
 </html>
+=======
+<?php include_once 'partials/head.php'; ?>
+
+    <h1>About Us</h1>
+
+<?php include_once 'partials/footer.php'; ?>
+>>>>>>> 0ef52ef9865da93707ccd109e00a59e41f663b59

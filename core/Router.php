@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Created by PhpStorm.
  * User: marceaupheulpin
@@ -36,11 +37,45 @@ class Router
     {
         if (array_key_exists($uri, $this->routes)) {
             return $this->routes[$uri];
+=======
+
+class Router
+{
+    protected $routes = [
+        'GET' => [],
+        'POST' => []
+    ];
+
+    public static function load($file)
+    {
+        $router = new static;
+
+        require $file;
+
+        return $router;
+    }
+
+    public function get($uri, $controller)
+    {
+        $this->routes['GET'][$uri] = $controller;
+    }
+
+    public function post($uri, $controller)
+    {
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+    public function direct($uri, $requestType)
+    {
+        if (array_key_exists($uri, $this->routes[$requestType])) {
+            return $this->routes[$requestType][$uri];
+>>>>>>> 0ef52ef9865da93707ccd109e00a59e41f663b59
         }
 
         throw new exception('No route defined for that uri');
     }
 
+<<<<<<< HEAD
     public static function load($file)
     {
         $router = new static;
@@ -52,3 +87,10 @@ class Router
 
 
 }
+=======
+    public function getRoutes()
+    {
+        return $this->routes;
+    }
+}
+>>>>>>> 0ef52ef9865da93707ccd109e00a59e41f663b59

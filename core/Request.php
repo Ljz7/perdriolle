@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Created by PhpStorm.
  * User: marceaupheulpin
@@ -12,3 +13,21 @@ class Request
         return trim($_SERVER['REQUEST_URI'], '/');
     }
 }
+=======
+
+class Request
+{
+    public static function uri()
+    {
+        return trim(
+            parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),
+            '/'
+        );
+    }
+
+    public static function method()
+    {
+        return $_SERVER['REQUEST_METHOD'];
+    }
+}
+>>>>>>> 0ef52ef9865da93707ccd109e00a59e41f663b59
