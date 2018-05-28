@@ -1,5 +1,7 @@
 <?php
 
+namespace Task\Core;
+
 class App
 {
     protected static $container = [];

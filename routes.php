@@ -1,8 +1,9 @@
 <?php
 
-$router->get('', 'controllers/index.php');
-$router->get('contact', 'controllers/contact.php');
-$router->get('about', 'controllers/about.php');
-$router->get('new/task', 'controllers/new-task.php');
+$router->get('', 'PagesController@home');
+$router->get('contact', 'PagesController@contact');
+$router->get('about', 'PagesController@about');
 
-$router->post('add/task', 'controllers/add-task.php');
+$router->get('tasks', 'TasksController@index');
+$router->get('new/task', 'TasksController@create');
+$router->post('new/task', 'TasksController@store');

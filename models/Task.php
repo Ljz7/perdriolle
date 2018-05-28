@@ -1,5 +1,7 @@
 <?php
 
+namespace Task\Models;
+
 class Task
 {
     private $id;
