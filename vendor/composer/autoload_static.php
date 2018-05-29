@@ -6,24 +6,40 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit15c48eafb6625fe9df82a999ab634f68
 {
-    public static $classMap = array (
-        'ComposerAutoloaderInit15c48eafb6625fe9df82a999ab634f68' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInit15c48eafb6625fe9df82a999ab634f68' => __DIR__ . '/..' . '/composer/autoload_static.php',
-        'Task\\Controllers\\PagesController' => __DIR__ . '/../..' . '/controllers/PagesController.php',
-        'Task\\Controllers\\TasksController' => __DIR__ . '/../..' . '/controllers/TasksController.php',
-        'Task\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
-        'Task\\Core\\Database\\Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
-        'Task\\Core\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
-        'Task\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
-        'Task\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
-        'Task\\Models\\Task' => __DIR__ . '/../..' . '/models/Task.php',
+    public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Task\\Models\\' => 12,
+            'Task\\Database\\' => 14,
+            'Task\\Core\\' => 10,
+            'Task\\Controllers\\' => 17,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Task\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models',
+        ),
+        'Task\\Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/database',
+        ),
+        'Task\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core',
+        ),
+        'Task\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers',
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit15c48eafb6625fe9df82a999ab634f68::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit15c48eafb6625fe9df82a999ab634f68::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit15c48eafb6625fe9df82a999ab634f68::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
