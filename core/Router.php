@@ -30,8 +30,8 @@ class Router
 
     public function direct($uri, $requestType)
     {
-        if (array_key_exists($uri, $this->routes[$requestType])) {
-            throw new Exception('No route defined for that uri');
+        if (!array_key_exists($uri, $this->routes[$requestType])) {
+            throw new \Exception('No route defined for that uri');
         }
 
         return $this->callAction(
@@ -45,7 +45,7 @@ class Router
         $controller = new $controller;
 
         if (!method_exists($controller, $action)) {
-            throw new Exception(
+            throw new \Exception(
                 "{$controller} does not respond to the {$action} action"
             );
         }
